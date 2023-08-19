@@ -3,8 +3,17 @@
 const yargs = require("yargs")
 const { argv } = yargs(process.argv)
 
-const array = (opts) => {
-    console.log("List all Array methods:")
+class Know {
+    constructor(opts) {
+        this.opts = opts
+        if (this.opts === 'array') { this.array() }
+    }
+    array = () => {
+        console.log("List all Array methods:")
+    }
 }
 
-array(argv.array);
+if (argv.array !== undefined) {
+    const know = new Know('array');
+    console.log(know);
+}
